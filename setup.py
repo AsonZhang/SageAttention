@@ -75,7 +75,7 @@ for i in range(device_count):
         warnings.warn(f"skipping GPU {i} with compute capability {major}.{minor}")
         continue
     compute_capabilities.add(f"{major}.{minor}")
-
+compute_capabilities.add(os.environ.get('CUDA_ARCH', ''))
 nvcc_cuda_version = get_nvcc_cuda_version(CUDA_HOME)
 if not compute_capabilities:
     raise RuntimeError("No GPUs found. Please specify the target GPU architectures or build on a machine with GPUs.")
