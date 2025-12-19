@@ -81,7 +81,7 @@ if not SKIP_CUDA_BUILD:
     (repo_dir / "csrc").mkdir(parents=True, exist_ok=True)
     if not cutlass_dir.exists():
         subprocess.run(
-            ["git", "clone", "--depth", "1", "https://github.com/NVIDIA/cutlass.git", str(cutlass_dir)],
+            ["git", "clone", "--depth", "1", "https://ghfast.top/https://github.com/NVIDIA/cutlass.git", str(cutlass_dir)],
             check=True
         )
     nvcc_flags = [
